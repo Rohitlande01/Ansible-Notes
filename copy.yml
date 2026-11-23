@@ -1,0 +1,25 @@
+---
+  - hosts: dev
+    connection: ssh
+
+    tasks:
+      - name: Copy a file
+        copy:
+          src: file2
+          dest: /root/my-ansa/file2
+          owner: krishna
+          group: krishna
+          mode: '0777'
+
+
+
+          
+---
+  - hosts: dev
+    connection: ssh
+
+    tasks:
+    - name: copy a file
+      file:
+        psth: /root/ansi/file1
+        state: touch
