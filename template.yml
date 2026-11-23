@@ -1,0 +1,25 @@
+---
+  - hosts: dev
+    connection: ssh
+
+    tasks:
+      - name: Example of Template
+        template:
+          src: tomcat-users2.xml
+          dest: /root/my-ansa/
+          owner: krishna
+          group: krishna
+          mode: '0755'
+
+
+
+---
+- hosts: dev
+  connection: ssh
+
+
+  tasks:
+    - name: copy Template file
+      template:
+        src: tomcat-user2.xml
+        dest: /root/ansi
