@@ -1,0 +1,40 @@
+---
+  - hosts: dev
+    connection: ssh
+
+    tasks:
+
+
+      - name: Clone git repo
+        git:
+          repo: https://github.com/adityaghaywat-cmd/flipkart.git
+          dest: /root/my-ansa/demo2
+          version: men
+          update: yes
+          key_file: /root/token
+
+
+
+
+
+---
+- hosts: dev
+  connection: ssh
+
+  tasks:
+
+    - name: clone git repo
+      git:
+        repo: https://github.com/adityaghaywat-cmd/flipkart.git
+        dest: /root/my-ansa/demo1
+        version: men
+        update: yes---
+- hosts: dev
+  connection: ssh
+
+  tasks:
+    - name: git integration
+      ansible.builtin.git:
+        repo: 'https://github.com/adityaghaywat-cmd/html.project.git'
+        dest: /var/www/html
+        version: main                                            
