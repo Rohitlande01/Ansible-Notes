@@ -1,0 +1,13 @@
+---
+  - hosts: dev
+    connection: ssh
+
+    tasks:
+      - name: file module -create file with permission and owner file
+
+        file:
+          path: /root/my-ansible/rohit.pdf
+          state: touch
+          owner: rohit
+          group: rohit
+          mode: "0555"              
