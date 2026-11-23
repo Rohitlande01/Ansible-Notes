@@ -1,0 +1,63 @@
+---
+- name: practicing Ansible
+  hosts: dev
+  connection: ssh
+
+  tasks:
+    - name: Remove tree
+      yum:
+          name: tree
+          state: present
+
+
+
+
+---
+- name: installtion
+  hosts: dev
+  connection: ssh
+
+
+  tasks:
+    - name: Installing tree packege
+      action: yum name=tree state=present
+
+
+
+
+---
+- hosts: dev
+  connection: ssh
+
+
+
+
+
+  vars:
+    pack:
+
+
+
+  tasks:
+    - name: Installing/Removing {{pack}} package
+      command: yum remove {{pack}} -y
+~                                   
+
+
+
+
+
+---
+- name: httpd
+  hosts: dev
+  connection: ssh
+
+  tasks:
+    - name: Install httpd
+      command: yum install httpd -y
+
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+        enabled: yes    
